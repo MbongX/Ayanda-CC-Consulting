@@ -348,9 +348,9 @@
             this.lbAddedServices.ItemHeight = 15;
             this.lbAddedServices.Items.AddRange(new object[] {
             "Makeover",
-            "Hairstyling ",
-            "Manicure ",
-            "Permanent "});
+            "Hairstyling",
+            "Manicure",
+            "Permanent"});
             this.lbAddedServices.Location = new System.Drawing.Point(383, 101);
             this.lbAddedServices.Name = "lbAddedServices";
             this.lbAddedServices.ScrollAlwaysVisible = true;

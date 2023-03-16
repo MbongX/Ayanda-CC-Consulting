@@ -7,7 +7,7 @@ namespace Ayanda_CC_Consulting
             InitializeComponent();
         }
         //global Variables
-        private double makeoverValue = 0, hairStylingValue = 0, manicureValue = 0, permMakeupValue = 0,discountValue=0;
+        private double makeoverValue = 0, hairStylingValue = 0, manicureValue = 0, permMakeupValue = 0,discountValue=0, makeoverValue2 = 0, hairStylingValue2 = 0, manicureValue2 = 0,permMakeupValue2 =0;
         private const double moValue = 125.00, hsValue = 60.00, mValue = 35.00, pmValue = 200.00, discount10 = 0.10, discount20 = 0.20, discountNull = 0.00;
 
         //initializing form Controls
@@ -103,25 +103,70 @@ namespace Ayanda_CC_Consulting
             }
 
             {
-                if (lbAddedServices.Text == "Makeover")
+                if (lbAddedServices.GetSelected(0) && lbAddedServices.GetSelected(1) && lbAddedServices.GetSelected(2) && lbAddedServices.GetSelected(3))
                 {
-                    MessageBox.Show("MO");
+                    makeoverValue2 = moValue;
+                    hairStylingValue2 = hsValue;
+                    manicureValue2 = mValue;
+                    permMakeupValue2 = pmValue;
+
+                    // MessageBox.Show("Yess!!!");
                 }
-                if(lbAddedServices.Text == "Manicure") 
-                {
-                    MessageBox.Show("Mani");
-                }
-                if (lbAddedServices.Text == "Permanent")
-                {
-                    MessageBox.Show("Perm");
-                }
-                if()
-            }
+                else if (lbAddedServices.GetSelected(0) && lbAddedServices.GetSelected(1) && lbAddedServices.GetSelected(2))
+                { 
                 
-            
-
-
-            return 0; //placeholder to avoid exception
+                }
+                if (lbAddedServices.GetSelected(0) && lbAddedServices.GetSelected(1) && lbAddedServices.GetSelected(3))
+                { 
+                
+                }
+                if (lbAddedServices.GetSelected(0) && lbAddedServices.GetSelected(2) && lbAddedServices.GetSelected(3))
+                { 
+                
+                }
+                if (lbAddedServices.GetSelected(1) && lbAddedServices.GetSelected(2) && lbAddedServices.GetSelected(3))
+                { 
+                
+                }
+                if (lbAddedServices.GetSelected(0) && lbAddedServices.GetSelected(1))
+                { 
+                
+                }
+                if (lbAddedServices.GetSelected(2) && lbAddedServices.GetSelected(3))
+                { 
+                
+                }
+                if (lbAddedServices.GetSelected(0) && lbAddedServices.GetSelected(2))
+                { 
+                
+                }
+                if (lbAddedServices.GetSelected(1) && lbAddedServices.GetSelected(3))
+                { 
+                
+                }
+                if (lbAddedServices.GetSelected(0) && lbAddedServices.GetSelected(3))
+                { 
+                
+                }
+                if (lbAddedServices.GetSelected(0))
+                { 
+                
+                }
+                if (lbAddedServices.GetSelected(1))
+                { 
+                
+                }
+                if(lbAddedServices.GetSelected(2))   
+                {
+                
+                }
+                if(lbAddedServices.GetSelected(3))
+                { 
+                
+                }
+            }
+            sum = hairStylingValue + manicureValue + permMakeupValue + makeoverValue + hairStylingValue2 + manicureValue2 + permMakeupValue2 + makeoverValue2;
+            return sum; //placeholder to avoid exception
         }
         private void Exit() 
         {
