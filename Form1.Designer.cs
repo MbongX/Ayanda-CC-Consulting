@@ -36,6 +36,7 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.defaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bellMTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.castellaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -133,6 +134,7 @@
             // fontToolStripMenuItem
             // 
             this.fontToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.defaultToolStripMenuItem,
             this.arielToolStripMenuItem,
             this.bellMTToolStripMenuItem,
             this.castellaToolStripMenuItem,
@@ -141,6 +143,13 @@
             this.fontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fontToolStripMenuItem.Text = "Font type";
             this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
+            // 
+            // defaultToolStripMenuItem
+            // 
+            this.defaultToolStripMenuItem.Name = "defaultToolStripMenuItem";
+            this.defaultToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.defaultToolStripMenuItem.Text = "Default";
+            this.defaultToolStripMenuItem.Click += new System.EventHandler(this.defaultToolStripMenuItem_Click);
             // 
             // arielToolStripMenuItem
             // 
@@ -481,5 +490,6 @@
         private ToolStripMenuItem castellaToolStripMenuItem;
         private ToolStripMenuItem monospaceToolStripMenuItem;
         private ToolStripMenuItem bellMTToolStripMenuItem;
+        private ToolStripMenuItem defaultToolStripMenuItem;
     }
 }

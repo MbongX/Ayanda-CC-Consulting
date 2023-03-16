@@ -24,6 +24,12 @@ namespace Ayanda_CC_Consulting
             FontChanger("Constantia");
         }
 
+        private void defaultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Segoe UI
+            FontChanger("Segoe UI");
+        }
+
         private void castellaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             //consolas not castella
@@ -241,7 +247,10 @@ namespace Ayanda_CC_Consulting
         }
         private void FontChanger(string font)
         {
+            //changinging the font of the entire form
             this.Font = new Font(font, 10, FontStyle.Regular);
+            //we can change as per selected radio buttion and listbox item 
+            
         }
 
     }
