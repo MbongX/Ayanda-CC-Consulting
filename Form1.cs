@@ -1,4 +1,5 @@
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace Ayanda_CC_Consulting
 {
@@ -100,25 +101,12 @@ namespace Ayanda_CC_Consulting
             programForm_ pf = new programForm_();
             pf.ShowDialog();
         }
-        //add
-        private void addServiceToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (txtService.Text != "")
-                lbAddedServices.Items.Add(txtService.Text);
-            else
-                txtService.Text = "Enter a Service";
-        }
-        //remove service
-        private void removeServiceToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RemoveService();
-        }
-
         //font color
         private void blueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FontColorChanger("Blue");
         }
+
 
         private void greenToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -134,9 +122,84 @@ namespace Ayanda_CC_Consulting
         {
             FontColorChanger("Red");
         }
+
+
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FontColorChanger("Black");
+        }
+
+
+        //add
+        private void addServiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Validator(txtService.Text))
+                lbAddedServices.Items.Add(txtService.Text);
+            else
+                MessageBox.Show("Enter the service","Add Service Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+        }
+        //remove service
+        private void removeServiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoveService();
+        }
+        //search
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool found = false;
+            string Text = txtService.Text;
+
+            if (Validator(Text))
+            {
+
+                for (int i = 0; i < lbAddedServices.Items.Count; i++)
+                {
+                    if (lbAddedServices.Items[i].ToString() == Text)
+                    {
+                        MessageBox.Show("Service Found : " + Text, "Search Service", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        found = true; 
+                        break; 
+                    }
+                    else
+                        continue;
+                }
+                if (found == false)
+                {
+                    MessageBox.Show("Service Not Found : " + Text, "Search Service", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+/*
+                foreach (Object obj in lbAddedServices.Items.ToString())
+                {
+                    if (obj == Text)
+                    {
+                        MessageBox.Show("Service Found : " + Text, "Search Service", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        found = true;
+                        break;
+                    }
+                    else
+                    {
+
+                        found = false;
+                    }
+
+                    if (!found)
+                    {
+                        MessageBox.Show("Service Found : " + Text, "Search Service", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }*/
+            }
+            else 
+            {
+                MessageBox.Show("Enter the service", "Service not defined", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtService.Focus();
+            }
+        }
+        //Display Services
+        private void detailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DisplayService();
         }
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,7 +220,13 @@ namespace Ayanda_CC_Consulting
         }
         private void countServicesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            int output = 0;
+            foreach (object obj in lbAddedServices.Items)
+            {
+                output ++;
 
+            }
+            MessageBox.Show("Total Service Count : " + output, "Available Services By Count", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void removeServicesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -168,8 +237,13 @@ namespace Ayanda_CC_Consulting
         //Custom Function
         private bool Validator(string sample) 
         {
-            
-            return false; //placeholder to avoid exception during buildtime
+            bool result = false;
+            sample= sample.Trim();
+            if (string.IsNullOrEmpty(sample))
+                result = false;
+            else
+                result = true;
+            return result;
         }
         private double CalculateMethod() //calculate and return current service cost before 
         {
@@ -316,7 +390,7 @@ namespace Ayanda_CC_Consulting
         }
         private void FontColorChanger(string color)
         {
-            //bgyr
+            //changes the font color to the one selected by the user
             if(color =="Red")
             this.ForeColor = Color.Red;
             if (color == "Blue")
@@ -331,13 +405,29 @@ namespace Ayanda_CC_Consulting
 
         private void RemoveService()
         {
+            //removes a selected service
+            if (Validator(txtService.Text))
+            {
+                lbAddedServices.Items.RemoveAt(lbAddedServices.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Enter the service", "Service not defined", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtService.Focus();
+            }
+                
+        }
+
+        private void DisplayService() 
+        {
+            //display all services 
+            string output = "";
             foreach (object obj in lbAddedServices.Items)
             {
-                if (obj == txtService.Text.ToString())
-                {
-                    lbAddedServices.Items.RemoveAt(lbAddedServices.Items.IndexOf(obj));
-                }
+                output += obj.ToString() + Environment.NewLine;
+
             }
+            MessageBox.Show(output, "Available Services", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -54,7 +54,6 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.countServicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeServicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbDiscount = new System.Windows.Forms.GroupBox();
@@ -252,8 +251,7 @@
             this.removeServiceToolStripMenuItem,
             this.searchToolStripMenuItem,
             this.detailsToolStripMenuItem,
-            this.countServicesToolStripMenuItem,
-            this.removeServicesToolStripMenuItem});
+            this.countServicesToolStripMenuItem});
             this.serviceToolStripMenuItem.Name = "serviceToolStripMenuItem";
             this.serviceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.serviceToolStripMenuItem.Text = "Service";
@@ -278,12 +276,14 @@
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
             this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.searchToolStripMenuItem.Text = "Search for a service";
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
             // detailsToolStripMenuItem
             // 
             this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
             this.detailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.detailsToolStripMenuItem.Text = "Display Items";
+            this.detailsToolStripMenuItem.Click += new System.EventHandler(this.detailsToolStripMenuItem_Click);
             // 
             // countServicesToolStripMenuItem
             // 
@@ -291,13 +291,6 @@
             this.countServicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.countServicesToolStripMenuItem.Text = "Count Services";
             this.countServicesToolStripMenuItem.Click += new System.EventHandler(this.countServicesToolStripMenuItem_Click);
-            // 
-            // removeServicesToolStripMenuItem
-            // 
-            this.removeServicesToolStripMenuItem.Name = "removeServicesToolStripMenuItem";
-            this.removeServicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.removeServicesToolStripMenuItem.Text = "Remove Services";
-            this.removeServicesToolStripMenuItem.Click += new System.EventHandler(this.removeServicesToolStripMenuItem_Click);
             // 
             // programerDetailsToolStripMenuItem
             // 
