@@ -36,6 +36,10 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.arielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bellMTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.castellaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.monospaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -122,21 +126,55 @@
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clearToolStripMenuItem.Text = "Clear";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
             // fontToolStripMenuItem
             // 
+            this.fontToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arielToolStripMenuItem,
+            this.bellMTToolStripMenuItem,
+            this.castellaToolStripMenuItem,
+            this.monospaceToolStripMenuItem});
             this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.fontToolStripMenuItem.Text = "Font Size";
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fontToolStripMenuItem.Text = "Font type";
             this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
+            // 
+            // arielToolStripMenuItem
+            // 
+            this.arielToolStripMenuItem.Name = "arielToolStripMenuItem";
+            this.arielToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arielToolStripMenuItem.Text = "Ariel";
+            this.arielToolStripMenuItem.Click += new System.EventHandler(this.arielToolStripMenuItem_Click);
+            // 
+            // bellMTToolStripMenuItem
+            // 
+            this.bellMTToolStripMenuItem.Name = "bellMTToolStripMenuItem";
+            this.bellMTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bellMTToolStripMenuItem.Text = "Bell MT";
+            this.bellMTToolStripMenuItem.Click += new System.EventHandler(this.bellMTToolStripMenuItem_Click);
+            // 
+            // castellaToolStripMenuItem
+            // 
+            this.castellaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.castellaToolStripMenuItem.Name = "castellaToolStripMenuItem";
+            this.castellaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.castellaToolStripMenuItem.Text = "Consolas";
+            this.castellaToolStripMenuItem.Click += new System.EventHandler(this.castellaToolStripMenuItem_Click_1);
+            // 
+            // monospaceToolStripMenuItem
+            // 
+            this.monospaceToolStripMenuItem.Name = "monospaceToolStripMenuItem";
+            this.monospaceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.monospaceToolStripMenuItem.Text = "Constantia";
+            this.monospaceToolStripMenuItem.Click += new System.EventHandler(this.monospaceToolStripMenuItem_Click);
             // 
             // colorToolStripMenuItem
             // 
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.colorToolStripMenuItem.Text = "Font Color";
             this.colorToolStripMenuItem.Click += new System.EventHandler(this.colorToolStripMenuItem_Click);
             // 
@@ -439,5 +477,9 @@
         private ToolStripMenuItem removeServiceToolStripMenuItem;
         private ToolStripMenuItem searchToolStripMenuItem;
         private ToolStripMenuItem detailsToolStripMenuItem;
+        private ToolStripMenuItem arielToolStripMenuItem;
+        private ToolStripMenuItem castellaToolStripMenuItem;
+        private ToolStripMenuItem monospaceToolStripMenuItem;
+        private ToolStripMenuItem bellMTToolStripMenuItem;
     }
 }
