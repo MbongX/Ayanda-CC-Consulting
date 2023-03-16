@@ -1,3 +1,5 @@
+using System.Drawing;
+
 namespace Ayanda_CC_Consulting
 {
     public partial class AyandaCCConsulting : Form
@@ -18,30 +20,7 @@ namespace Ayanda_CC_Consulting
         //initializing form Controls
         private string currentValue = "", totalValue = "", addedService = "";
 
-        private void monospaceToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Constantia not monospace
-            FontChanger("Constantia");
-        }
 
-        private void defaultToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Segoe UI
-            FontChanger("Segoe UI");
-        }
-
-        private void castellaToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            //consolas not castella
-            FontChanger("Consolas");
-        }
-
-
-
-        private void bellMTToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FontChanger("Bell MT");
-        }
 
         private void AyandaCCConsulting_Load(object sender, EventArgs e)
         {
@@ -81,11 +60,83 @@ namespace Ayanda_CC_Consulting
         //edit menustrip
         private void fontToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
         private void colorToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+        //font family
+        private void monospaceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Constantia not monospace
+            FontChanger("Constantia");
+        }
+
+
+        private void defaultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Segoe UI
+            FontChanger("Segoe UI");
+        }
+
+
+
+        private void castellaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //consolas not castella
+            FontChanger("Consolas");
+        }
+
+
+
+        private void bellMTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontChanger("Bell MT");
+        }
+
+        private void programDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            programForm_ pf = new programForm_();
+            pf.ShowDialog();
+        }
+        //add
+        private void addServiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (txtService.Text != "")
+                lbAddedServices.Items.Add(txtService.Text);
+            else
+                txtService.Text = "Enter a Service";
+        }
+        //remove service
+        private void removeServiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoveService();
+        }
+
+        //font color
+        private void blueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontColorChanger("Blue");
+        }
+
+        private void greenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontColorChanger("Green");
+        }
+
+        private void yellowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontColorChanger("Yellow");
+        }
+
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontColorChanger("Red");
+        }
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FontColorChanger("Black");
         }
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,7 +149,18 @@ namespace Ayanda_CC_Consulting
         {
 
         }
+        //show programmer details
         private void programerDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            programmerForm progForm = new programmerForm();
+            progForm.ShowDialog();
+        }
+        private void countServicesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeServicesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -252,6 +314,30 @@ namespace Ayanda_CC_Consulting
             //we can change as per selected radio buttion and listbox item 
             
         }
+        private void FontColorChanger(string color)
+        {
+            //bgyr
+            if(color =="Red")
+            this.ForeColor = Color.Red;
+            if (color == "Blue")
+                this.ForeColor = Color.Blue;
+            if (color == "Green")
+                this.ForeColor = Color.Green;
+            if (color == "Yellow")
+                this.ForeColor = Color.Yellow;
+            if (color == "Black")
+                this.ForeColor = Color.Black;
+        }
 
+        private void RemoveService()
+        {
+            foreach (object obj in lbAddedServices.Items)
+            {
+                if (obj == txtService.Text.ToString())
+                {
+                    lbAddedServices.Items.RemoveAt(lbAddedServices.Items.IndexOf(obj));
+                }
+            }
+        }
     }
 }

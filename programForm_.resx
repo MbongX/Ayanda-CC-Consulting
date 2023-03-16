@@ -57,4 +57,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Ayanda Mkhize owns an image consulting shop Ayanda CC
+
+Her clients can select from the following services at the specified regular prices:
+
+•	Makeover R125
+•	Hair Styling R50
+•	Manicure R35
+•	Permanent Makeup R200
+
+She has distributed discount coupons that advertise discounts of :
+
+•	10 percent
+•	20 percent</value>
+  </data>
 </root>
